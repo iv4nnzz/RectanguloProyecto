@@ -8,6 +8,7 @@ package modelo;
  *
  * @author 9spot
  */
+
 public abstract class Figura {
     protected double x1;
     protected double y1;
@@ -20,6 +21,12 @@ public abstract class Figura {
     public abstract double calcularArea();
     
     public abstract String obtenerNombre();
+    
+    @Override
+    public String toString() {
+        return "Figura: " + obtenerNombre() + "\n" +
+               "Punto inicial: (" + x1 + ", " + y1 + ")";
+    }
     
     public double getX1() {
         return x1;
