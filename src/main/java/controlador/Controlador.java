@@ -21,7 +21,7 @@ public class Controlador {
     public void iniciar() {
         boolean continuar = true;
         
-        vista.mostrarMensaje("¡Bienvenido al Sistema de Rectángulos!");
+        vista.mostrarMensaje("Bienvenido al Sistema de Rectángulos");
         
         while (continuar) {
             int opcion = vista.mostrarMenu();
@@ -66,7 +66,7 @@ public class Controlador {
                 break;
                 
             case 7:
-                vista.mostrarMensaje("¡Gracias por usar el sistema!");
+                vista.mostrarMensaje("Gracias por usar el sistema");
                 break;
                 
             default:
@@ -95,9 +95,8 @@ public class Controlador {
             double factor = vista.pedirFactor();
             
             if (factor > 0) {
-                rectangulo.cambiarEscala(factor);
-                vista.mostrarMensaje("Escala cambiada exitosamente!\n" +
-                                   "Factor aplicado: " + factor);
+                rectangulo.cambiarEscala(factor, true);
+                vista.mostrarMensaje("Escala cambiada exitosamente!\n" + "Factor aplicado: " + factor);
             } else {
                 vista.mostrarError("El factor debe ser mayor que 0");
             }
