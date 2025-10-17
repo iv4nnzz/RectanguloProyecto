@@ -17,7 +17,7 @@ public class Controlador {
         this.vista = vista;
         this.rectangulo = null;
     }
-
+    
     private void crearRectangulo() {
         double[] coords = vista.pedirCoordenadas();
         
@@ -47,4 +47,19 @@ public class Controlador {
         }
     }
     
+    private void verificarPunto() {
+        if (rectangulo != null) {
+            double[] punto = vista.pedirPunto();
+            
+            if (punto != null) {
+                boolean estaDentro = rectangulo.puntoEstaDentro(punto[0], punto[1]);
+                
+                if (estaDentro) {
+                    vista.mostrarMensaje("El punto (" + punto[0] + ", " + punto[1] + ") SÍ está dentro del rectángulo");
+                } else {
+                    vista.mostrarMensaje("El punto (" + punto[0] + ", " + punto[1] + ") NO está dentro del rectángulo");
+                }
+            }
+        }
+    }
 }
