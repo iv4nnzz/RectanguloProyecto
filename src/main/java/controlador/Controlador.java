@@ -62,4 +62,32 @@ public class Controlador {
             }
         }
     }
+    
+    private void moverRectangulo() {
+        if (rectangulo != null) {
+            Object[] movimiento = vista.pedirMovimiento();
+            
+            if (movimiento != null) {
+                double unidades = (Double) movimiento[0];
+                String direccion = (String) movimiento[1];
+                
+                rectangulo.mover(unidades, direccion);
+                
+                String sentido = "";
+                if (direccion.equals("Horizontal")) {
+                    sentido = (unidades > 0) ? "derecha" : "izquierda";
+                } else {
+                    sentido = (unidades > 0) ? "arriba" : "abajo";
+                }
+                
+                vista.mostrarMensaje("Rectángulo movido " + Math.abs(unidades) + " unidades hacia " + sentido);
+            }
+        }
+    }
+    
+    private void mostrarInformacion() {
+        if (rectangulo != null) {
+            vista.mostrarMensaje(rectangulo.toString());
+        }
+    }
 }
