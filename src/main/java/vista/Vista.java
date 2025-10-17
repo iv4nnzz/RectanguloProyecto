@@ -93,6 +93,32 @@ public class Vista {
         return punto;
     }
     
+    public Object[] pedirMovimiento() {
+        Object[] movimiento = new Object[2];
+        
+        try {
+            String[] opciones = {"Horizontal", "Vertical"};
+            String direccion = (String) JOptionPane.showInputDialog(null,
+                              "Seleccione la dirección del movimiento:",
+                              "Dirección", JOptionPane.QUESTION_MESSAGE, null,
+                              opciones, opciones[0]);
+            
+            if (direccion == null) return null;
+            
+            String unidades = JOptionPane.showInputDialog(
+                             "Ingrese las unidades a mover:\n" +"(Positivo = derecha/arriba, Negativo = izquierda/abajo)");
+            
+            movimiento[0] = Double.parseDouble(unidades);
+            movimiento[1] = direccion;
+            
+        } catch (NumberFormatException e) {
+            mostrarMensaje("Error: Debe ingresar un número válido");
+            return null;
+        }
+        
+        return movimiento;
+    }
+    
     public void mostrarMensaje(String mensaje) {
         JOptionPane.showMessageDialog(null, mensaje, 
                                      "Información", JOptionPane.INFORMATION_MESSAGE);
