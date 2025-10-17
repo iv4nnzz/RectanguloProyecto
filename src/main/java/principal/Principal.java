@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package principal;
+import controlador.Controlador;
+import vista.Vista;
 
 /**
  *
@@ -11,6 +13,9 @@ package principal;
 public class Principal {
     
     public static void main(String[] args) {
+        Vista vista = new Vista();
         
+        Controlador controlador = new Controlador(vista);
+        controlador.iniciar();
     }
 }
