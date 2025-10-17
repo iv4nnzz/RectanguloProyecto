@@ -18,6 +18,41 @@ public class Controlador {
         this.rectangulo = null;
     }
     
+    private void procesarOpcion(int opcion) {
+        switch (opcion) {
+            case 1:
+                crearRectangulo();
+                break;
+                
+            case 2:
+                calcularArea();
+                break;
+                
+            case 3:
+                cambiarEscala();
+                break;
+                
+            case 4:
+                verificarPunto();
+                break;
+                
+            case 5:
+                moverRectangulo();
+                break;
+                
+            case 6:
+                mostrarInformacion();
+                break;
+                
+            case 7:
+                vista.mostrarMensaje("Gracias por usar el sistema");
+                break;
+                
+            default:
+                vista.mostrarError("Opción no válida");
+        }
+    }
+    
     private void crearRectangulo() {
         double[] coords = vista.pedirCoordenadas();
         
