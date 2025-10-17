@@ -33,7 +33,34 @@ public class Vista {
             return 0;
         }
     }
+    
+    public double[] pedirCoordenadas() {
+        double[] coordenadas = new double[4];
         
+        try {
+            String x1 = JOptionPane.showInputDialog("Ingrese X1 del primer vértice:");
+            coordenadas[0] = Double.parseDouble(x1);
+            
+            String y1 = JOptionPane.showInputDialog("Ingrese Y1 del primer vértice:");
+            coordenadas[1] = Double.parseDouble(y1);
+            
+            String x2 = JOptionPane.showInputDialog("Ingrese X2 del segundo vértice:");
+            coordenadas[2] = Double.parseDouble(x2);
+            
+            String y2 = JOptionPane.showInputDialog("Ingrese Y2 del segundo vértice:");
+            coordenadas[3] = Double.parseDouble(y2);
+            
+        } catch (NumberFormatException e) {
+            mostrarMensaje("Error: Debe ingresar números válidos");
+            return null;
+        } catch (NullPointerException e) {
+            mostrarMensaje("Operación cancelada");
+            return null;
+        }
+        
+        return coordenadas;
+    }
+
     public void mostrarMensaje(String mensaje) {
         JOptionPane.showMessageDialog(null, mensaje, 
                                      "Información", JOptionPane.INFORMATION_MESSAGE);
