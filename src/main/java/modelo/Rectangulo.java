@@ -17,4 +17,31 @@ public class Rectangulo extends Figura {
         this.x2 = x2;
         this.y2 = y2;
     }
+    
+    public Rectangulo(double x1, double y1, double ancho, double alto, boolean usarDimensiones) {
+        super(x1, y1);
+        
+        if (usarDimensiones) {
+            if (ancho > 0) {
+                if (alto > 0) {
+                    this.x2 = x1 + ancho;
+                    this.y2 = y1 + alto;
+                } else {
+                    this.x2 = x1 + ancho;
+                    this.y2 = y1 + ancho;
+                }
+            } else {
+                if (alto > 0) {
+                    this.x2 = x1 + alto;
+                    this.y2 = y1 + alto;
+                } else {
+                    this.x2 = x1 + 10;
+                    this.y2 = y1 + 10;
+                }
+            }
+        } else {
+            this.x2 = ancho;
+            this.y2 = alto;
+        }
+    }
 }
