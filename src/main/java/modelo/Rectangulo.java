@@ -82,7 +82,7 @@ public class Rectangulo extends Figura {
                     cambiarEscala(10.0);
                 }
             } else {
-                System.out.println("Factor inválido, no se aplica cambio");
+                System.out.println("Factor inválido, no se aplica cambios");
             }
         } else {
             cambiarEscala(factor);
