@@ -9,6 +9,13 @@ package modelo;
  * @author 9spot
  */
 
-public class Figura {
-
+public abstract class Figura {
+    protected double x1;
+    protected double y1;
+    
+    public Figura(double x1, double y1) {
+        this.x1 = x1;
+        this.y1 = y1;
+    }
+    
 }
