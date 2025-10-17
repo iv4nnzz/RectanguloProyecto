@@ -97,4 +97,24 @@ public class Rectangulo extends Figura {
         
         return (x >= minX && x <= maxX && y >= minY && y <= maxY);
     }
+    
+    public void mover(double unidades, String direccion) {
+        switch (direccion.toLowerCase()) {
+            case "horizontal":
+                x1 += unidades;
+                x2 += unidades;
+                break;
+            case "vertical":
+                y1 += unidades;
+                y2 += unidades;
+                break;
+            default:
+                System.out.println("Dirección no válida");
+        }
+    }
+    
+    public void mover(double unidades) {
+        mover(unidades, "horizontal");
+    }
+
 }
