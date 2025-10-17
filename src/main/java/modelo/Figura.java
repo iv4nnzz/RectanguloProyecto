@@ -18,4 +18,8 @@ public abstract class Figura {
         this.y1 = y1;
     }
     
+    public abstract double calcularArea();
+    
+    public abstract String obtenerNombre();
+    
 }
