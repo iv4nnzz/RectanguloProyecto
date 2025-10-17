@@ -73,6 +73,26 @@ public class Vista {
         }
     }
     
+    public double[] pedirPunto() {
+        double[] punto = new double[2];
+        
+        try {
+            String x = JOptionPane.showInputDialog("Ingrese la coordenada X del punto:");
+            punto[0] = Double.parseDouble(x);
+            
+            String y = JOptionPane.showInputDialog("Ingrese la coordenada Y del punto:");
+            punto[1] = Double.parseDouble(y);
+            
+        } catch (NumberFormatException e) {
+            mostrarMensaje("Error: Debe ingresar números válidos");
+            return null;
+        } catch (NullPointerException e) {
+            return null;
+        }
+        
+        return punto;
+    }
+    
     public void mostrarMensaje(String mensaje) {
         JOptionPane.showMessageDialog(null, mensaje, 
                                      "Información", JOptionPane.INFORMATION_MESSAGE);
