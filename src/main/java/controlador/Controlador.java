@@ -33,4 +33,18 @@ public class Controlador {
             vista.mostrarMensaje("El área del rectángulo es: " + area + " unidades²");
         }
     }
+    
+    private void cambiarEscala() {
+        if (rectangulo != null) {
+            double factor = vista.pedirFactor();
+            
+            if (factor > 0) {
+                rectangulo.cambiarEscala(factor, true);
+                vista.mostrarMensaje("Escala cambiada exitosamente!\n" + "Factor aplicado: " + factor);
+            } else {
+                vista.mostrarError("El factor debe ser mayor que 0");
+            }
+        }
+    }
+    
 }
