@@ -18,6 +18,27 @@ public class Controlador {
         this.rectangulo = null;
     }
     
+    public void iniciar() {
+        boolean continuar = true;
+        
+        vista.mostrarMensaje("Bienvenido al Sistema de Rectángulos");
+        
+        while (continuar) {
+            int opcion = vista.mostrarMenu();
+            
+            if (rectangulo == null && opcion != 1 && opcion != 7) {
+                vista.mostrarError("Primero debe crear un rectángulo (Opción 1)");
+                continue;
+            }
+            
+            procesarOpcion(opcion);
+            
+            if (opcion == 7) {
+                continuar = false;
+            }
+        }
+    }
+    
     private void procesarOpcion(int opcion) {
         switch (opcion) {
             case 1:
