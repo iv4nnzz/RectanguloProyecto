@@ -56,4 +56,36 @@ public class Rectangulo extends Figura {
     public String obtenerNombre() {
         return "Rectángulo";
     }
+    
+    public void cambiarEscala(double factor) {
+        double diferenciaX = x2 - x1;
+        double diferenciaY = y2 - y1;
+        
+        x2 = x1 + (diferenciaX * factor);
+        y2 = y1 + (diferenciaY * factor);
+    }
+    
+    public void cambiarEscala(double factorX, double factorY) {
+        double diferenciaX = x2 - x1;
+        double diferenciaY = y2 - y1;
+        
+        x2 = x1 + (diferenciaX * factorX);
+        y2 = y1 + (diferenciaY * factorY);
+    }
+    
+    public void cambiarEscala(double factor, boolean validar) {
+        if (validar) {
+            if (factor > 0) {
+                if (factor <= 10) {
+                    cambiarEscala(factor);
+                } else {
+                    cambiarEscala(10.0);
+                }
+            } else {
+                System.out.println("Factor inválido, no se aplica cambio");
+            }
+        } else {
+            cambiarEscala(factor);
+        }
+    }
 }
