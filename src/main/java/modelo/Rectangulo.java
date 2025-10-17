@@ -116,5 +116,30 @@ public class Rectangulo extends Figura {
     public void mover(double unidades) {
         mover(unidades, "horizontal");
     }
-
+    
+    @Override
+    public String toString() {
+        String infoBase = super.toString();
+        
+        return infoBase + "\n" +
+               "Punto final: (" + x2 + ", " + y2 + ")\n" +
+               "Dimensiones: " + Math.abs(x2 - x1) + " x " + Math.abs(y2 - y1) + "\n" +
+               "Área: " + calcularArea() + " unidades²";
+    }
+    
+    public double getX2() {
+        return x2;
+    }
+    
+    public void setX2(double x2) {
+        this.x2 = x2;
+    }
+    
+    public double getY2() {
+        return y2;
+    }
+    
+    public void setY2(double y2) {
+        this.y2 = y2;
+    }
 }
