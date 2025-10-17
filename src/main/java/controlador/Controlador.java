@@ -27,4 +27,10 @@ public class Controlador {
         }
     }
     
+    private void calcularArea() {
+        if (rectangulo != null) {
+            double area = rectangulo.calcularArea();
+            vista.mostrarMensaje("El área del rectángulo es: " + area + " unidades²");
+        }
+    }
 }
