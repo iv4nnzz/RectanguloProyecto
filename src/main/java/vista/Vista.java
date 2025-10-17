@@ -60,7 +60,19 @@ public class Vista {
         
         return coordenadas;
     }
-
+    
+    public double pedirFactor() {
+        try {
+            String factor = JOptionPane.showInputDialog("Ingrese el factor de escala:");
+            return Double.parseDouble(factor);
+        } catch (NumberFormatException e) {
+            mostrarMensaje("Error: Debe ingresar un número válido");
+            return 1.0; 
+        } catch (NullPointerException e) {
+            return 1.0;
+        }
+    }
+    
     public void mostrarMensaje(String mensaje) {
         JOptionPane.showMessageDialog(null, mensaje, 
                                      "Información", JOptionPane.INFORMATION_MESSAGE);
