@@ -17,4 +17,14 @@ public class Controlador {
         this.vista = vista;
         this.rectangulo = null;
     }
+
+    private void crearRectangulo() {
+        double[] coords = vista.pedirCoordenadas();
+        
+        if (coords != null) {
+            rectangulo = new Rectangulo(coords[0], coords[1], coords[2], coords[3]);
+            vista.mostrarMensaje("Rectángulo creado exitosamente!");
+        }
+    }
+    
 }
