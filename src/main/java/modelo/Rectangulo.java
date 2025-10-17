@@ -44,4 +44,16 @@ public class Rectangulo extends Figura {
             this.y2 = alto;
         }
     }
+    
+    @Override
+    public double calcularArea() {
+        double base = Math.abs(x2 - x1);
+        double altura = Math.abs(y2 - y1);
+        return base * altura;
+    }
+    
+    @Override
+    public String obtenerNombre() {
+        return "Rectángulo";
+    }
 }
